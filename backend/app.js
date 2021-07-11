@@ -5,6 +5,8 @@ const path = require("path");
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const userRouter = require('./src/routes/users.js');
+const postRouter = require('./src/routes/posts.js');
+
 
 const dbURL = 'mongodb://localhost:27017/OOTMusers'
 // 익스프레스 객체 생성
@@ -37,6 +39,7 @@ app.get('/', (req, res) => {
 
 //router 연결
 app.use('/user', userRouter);
+app.use('/post', postRouter);
 
 // Express 서버 시작
 http.createServer(app).listen(app.get('port'), function(){
