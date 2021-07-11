@@ -12,7 +12,7 @@ function add(postinfo, callback){
         //userProfile:
         userBody: {height: postinfo.height, weight: postinfo.weight},
         wishUsers: [],
-        markUsers: [];
+        markUsers: [],
         //postImage: [],
         clothInfo: {
             top: postinfo.top,
