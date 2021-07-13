@@ -13,6 +13,11 @@ function getAll(callback) {
         callback(result);
     });
 }
+function getUser(userID, callback){
+    UserModel.findOne({userID: userID}, (error,result) => {
+        callback(result);
+    });
+}
 function add(userinfo, callback) {
     UserModel.find({"userID": userinfo.userID}, (error,result) => {
         if(result.length){
@@ -22,6 +27,7 @@ function add(userinfo, callback) {
             const newUser = new UserModel({
                 userName: userinfo.username,
                 userID: userinfo.userID,
+                userProfile: userinfo.userProfile,
                 postArray: []
             });
             newUser.save();
@@ -41,6 +47,7 @@ function deleteAll(callback) {
 
 module.exports = {
     getAll,
+    getUser,
     add,
     deleteUser,
     deleteAll

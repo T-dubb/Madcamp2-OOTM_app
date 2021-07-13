@@ -6,6 +6,14 @@ router.get("/gets", (req, res) => {
     db.getAll((item) => {res.json(item)
     });
 });
+router.get("/getuser/:userID", (req, res) => {
+    
+    db.getUser(
+        req.params.userID,
+        (item) => {res.json(item)
+        }
+    );
+});
 
 router.post("/login", (req, res) => {
     db.add(req.body, () => {res.status(200).send();

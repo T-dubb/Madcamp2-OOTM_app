@@ -5,7 +5,7 @@ const path = require("path");
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const userRouter = require('./src/routes/users.js');
-const postRouter = require('./src/routes/posts.js');
+const postRouter = require('./src/routes/post.js');
 
 
 const dbURL = 'mongodb://localhost:27017/OOTMusers'
