@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema({
     userID: String,
     userName: String,
+    userProfile: String,
     postArray: {
         type: Array,
         default: []
