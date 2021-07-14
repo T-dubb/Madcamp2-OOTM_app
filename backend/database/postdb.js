@@ -20,6 +20,7 @@ function getpostid(callback){
     });
 }
 function getpostid_hot(callback){
+   
     PostModel.find({}, (error,result) => {
         function customSort(a, b) { 
             if((a.wishUsers.length+a.markUsers.length) == (b.wishUsers.length+b.markUsers.length)){ 
@@ -30,7 +31,7 @@ function getpostid_hot(callback){
         result.sort(customSort);
 
         let postids = result.map(post => post._id);
-
+        console.log(postids);
        
         callback(postids);
     });

@@ -12,7 +12,7 @@ router.get("/getpostid", (req,res) => {
     });
 });
 router.get("/getpostid-hot", (req,res) => {
-    db.getpostid_hot((item) => {res.status})
+    db.getpostid_hot((item) => {res.status(200).send(item)})
 })
 
 router.get("/getpostid-mypage/:userID", (req,res) => {
